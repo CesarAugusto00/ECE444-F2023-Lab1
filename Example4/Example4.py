@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session, redirect, url_for, f
 from flask_moment import Moment
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
+from wtforms.fields import EmailField
 #StringField is the box on the website to submit strings and submit is to submit 
 from wtforms import StringField, SubmitField
 #The validators are if the user didn't put something in the field we want something to pop up 
@@ -18,7 +19,7 @@ from datetime import datetime
 
 class NamerForm(FlaskForm):
     name = StringField("What is your name ?", validators=[DataRequired()])
-    mail = StringField("What is your email?", validators=[DataRequired(), Email()])
+    mail = EmailField("What is your email?", validators=[DataRequired(), Email("Please enter your email")])
     submit = SubmitField("Submit")
 
 
