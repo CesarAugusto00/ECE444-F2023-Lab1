@@ -24,3 +24,6 @@ This is the Lab 1. Activity 1 Installing Flask.<br> this repo is a clone of http
 
 ![image](https://github.com/CesarAugusto00/ECE444-F2023-Lab1/assets/144982985/58c2089c-4090-4dc7-aae8-8002553c18f0)
 
+![image](https://github.com/CesarAugusto00/ECE444-F2023-Lab1/assets/144982985/06680f22-3b16-48de-82f2-8e2a7fa50f2c)
+
+
