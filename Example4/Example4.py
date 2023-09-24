@@ -16,14 +16,13 @@ bootstrap = Bootstrap(app)
 #Should not be here if pushed to git (the above key)
 from datetime import datetime
 
-def validate_email(form, field):
-    if '@' not in field.data:
-        raise ValidationError('Email must contain "@"')
-
 class NamerForm(FlaskForm):
     name = StringField("What is your name ?", validators=[DataRequired()])
     mail = StringField("What is your email?", validators=[DataRequired(), Email()])
     submit = SubmitField("Submit")
+
+
+ 
 
 
 #This is for page not found error 404
@@ -43,6 +42,7 @@ def home_p():
 
 @app.route('/', methods=['GET', 'POST'])
 def name_p():
+
     form = NamerForm()
     if form.validate_on_submit():
         old_name = session.get('name')
@@ -57,6 +57,8 @@ def name_p():
             #return redirect(url_for('home_p'))
         # name = form.name.data
         # mail = form.mail.data
+        # Clear the session variables
+ 
         session['name'] = form.name.data
         session['mail'] = form.mail.data
         return redirect(url_for('name_p'))
